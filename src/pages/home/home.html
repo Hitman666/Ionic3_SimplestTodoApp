@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Ionic Blank
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+        <ion-input [(ngModel)]="todo" placeholder="Insert some todo here here" type="text"></ion-input>
+    </ion-item>
+
+    <button ion-button full (click)="add()">ADD</button>
+
+    <ion-list>
+        <ion-item-sliding *ngFor="let t of todos">
+            <ion-item>
+                {{t}}
+            </ion-item>
+
+            <ion-item-options side="right">
+                <button ion-button color="danger" (click)="delete(t)">
+                    <ion-icon name="trash"></ion-icon> Delete
+                </button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
+</ion-content>
